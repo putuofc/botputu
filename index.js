@@ -276,20 +276,9 @@ quoted: msg
 switch (command) {
     case prefix + "ai":{
 if (!text) return reply('Mau nanya apa sama putu')
-const response = await axios.post("https://api.openai.com/v1/chat/completions", {
-model: "gpt-3.5-turbo",
-messages: [
-{ role: "system", content: `Kamu adalah Putu, kamu di buat oleh putuofc. Kepribadianmu adalah pendiam, pemalu, rajin, ramah, suka membantu. Gaya bicaramu adalah bahasa indonesia tetapi mengikuti bahasa gaul, kata anda dan kamu di dengan lu, kata saya di ganti dengan gw. kamu menjawab semua pertanyaan dengan bahasa yang sopan, singkat, jelas dan di beri emoticon lucu yang mengarah apa yang di bahas dengan sedikit di beri lolucon supaya jawaban tidak membosankan. selalu gunakan jawaban yang mudah di mengerti.`},
-{ role: "user", content: text }
-],
-temperature: 0.7
-}, {
-headers: {
-'Content-Type': 'application/json',
-'Authorization': `Bearer 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`
-},
-})
-reply(response.data.choices[0].message.content);
+        let response = await axios.get(`https://aemt.me/gpt4?text=${text}`)
+let hasil = `${response.data.result}`
+reply(hasil);
 }
 break
 }} catch (e) {
