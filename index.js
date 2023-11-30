@@ -152,17 +152,6 @@ res.type('text/plain').send(output);
                  lolcatjs.fromString(`[ Express listening on port ] ${PORT}`);
 });
 
-
-
-function keepAlive() {
-    const url = `https://${process.env.REPL_SLUG}.${process.env.REPL_OWNER}.repl.co`
-if (/(\/\/|\.)undefined\./.test(url)) return
-    setInterval(() => {
-        fetch(url).catch(console.error)
-    }, 15 * 1000)
-    }
-keepAlive()
-
 const setting = {
 owner: ['6287752825741@s.whatsapp.net'],
 prefix: '.',
@@ -254,10 +243,6 @@ let time = moment.tz("Asia/Jakarta").format("HH:mm:ss");
 let prefix = setting.prefix;
   const isCmd = body.startsWith(prefix);
 const botNumber = "6285658939117@s.whatsapp.net"
-if (command) { 
-console.log(chalk.bold.rgb(255, 178, 102)('\x1b[1;31m~\x1b[1;37m> [\x1b[1;32mCMD\x1b[1;37m]'), chalk.bold.rgb(153, 255, 153)(command), chalk.bold.rgb(204, 204, 0)("from"), chalk.bold.rgb(153, 255, 204)(pushname), chalk.bold.rgb(153, 255, 153)("Power"), chalk.bold.rgb(204, 204, 0)("By"), chalk.bold.rgb(255, 178, 102)("PutuOfc")); 
-}
-
 if (isCmd) {
 let titida = ['composing', 'recording']
 yte = titida[Math.floor(titida.length * Math.random())]
